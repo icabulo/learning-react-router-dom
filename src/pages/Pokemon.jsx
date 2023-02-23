@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Loader } from "../components/Loader";
 
 function Pokemon() {
   const [characters, setCharacters] = useState([]);
@@ -46,6 +47,7 @@ function Pokemon() {
     console.log("Pokemons", pokemons);
 
     // return setCharacters(pokemons);
+    setLoader(false);
     setCharacters(pokemons);
   };
 
@@ -78,6 +80,8 @@ function Pokemon() {
   return (
     <>
       <Header>Header</Header>
+      {/* <Loader></Loader> */}
+      {loader && <Loader />}
       <div>{characters.length >= 1 && renderPokemons}</div>
       {/* <div>{characters.length >= 1 && renderPokemons()}</div> */}
       <Footer>Footer</Footer>
