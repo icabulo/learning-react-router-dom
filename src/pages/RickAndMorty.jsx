@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { Loader } from "../components/Loader";
 
 // import { Card } from "../components/Card";
 import { CardList } from "../components/CardList";
@@ -37,7 +36,6 @@ function RickAndMorty() {
       .catch((error) => {
         console.log("Error", error);
       });
-    setLoader(false);
   };
 
   useEffect(() => {
@@ -60,7 +58,6 @@ function RickAndMorty() {
   return (
     <>
       <Header>Header</Header>
-      {loader && <Loader />}
 
       {/* <div>{characters.length >= 1 && mappedCharacters}</div> */}
       <CardList list={characters} />
