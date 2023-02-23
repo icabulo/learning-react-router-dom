@@ -2,14 +2,13 @@
 @import "../../styles/mixins.scss";
 
 .loader-modal {
-  background-color: white;
+  background-color: rgb(255, 255, 255, 0.5);
   width: 100vw;
   height: 100vh;
   @include flexbox();
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.4;
 }
 
 .lds-ring {
