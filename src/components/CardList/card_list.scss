@@ -1,5 +1,7 @@
 @import "../../styles/mixins.scss";
+@import "../../styles/globals.scss";
 
 .card-list {
   @include flexbox();
+  @extend .flex-wrap;
 }

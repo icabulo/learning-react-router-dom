@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-
 // import { Card } from "../components/Card";
 import { CardList } from "../components/CardList";
+import { Context } from "../context";
 
 function RickAndMorty() {
   const [characters, setCharacters] = useState([]);
+  const context = useContext(Context);
+  console.log("*****", context);
+
   const [loader, setLoader] = useState(true);
 
   const getAllCharacters = () => {
@@ -30,6 +34,8 @@ function RickAndMorty() {
       .then((request) => request.json())
       .then((data) => {
         setCharacters(data.results);
+        context.rickAndMorty.characters = data.results;
+        context.redirectDetailsRoute = "/rickandmorty";
         // console.log(data.results);
       })
       //Rejected

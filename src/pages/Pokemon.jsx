@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { CardList } from "../components/CardList";
 
 function Pokemon() {
   const [characters, setCharacters] = useState([]);
@@ -65,20 +66,23 @@ function Pokemon() {
     );
   }; */
 
-  const renderPokemons = characters.map((character, index) => (
+  /*  const renderPokemons = characters.map((character, index) => (
     // <div key={index}>{character.name}</div>
     <div>
       <div key={index}>{character.name}</div>
       <img src={character.image} alt={character.name} />
     </div>
-  ));
+  )); */
+
+  const renderPokemons = () => <CardList list={characters} />;
 
   // console.log("redered pokemons", renderPokemons.length, renderPokemons);
 
   return (
     <>
       <Header>Header</Header>
-      <div>{characters.length >= 1 && renderPokemons}</div>
+      {characters.length >= 1 && renderPokemons()}
+
       {/* <div>{characters.length >= 1 && renderPokemons()}</div> */}
       <Footer>Footer</Footer>
     </>

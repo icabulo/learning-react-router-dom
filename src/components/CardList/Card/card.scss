@@ -2,11 +2,11 @@
 @import "../../../styles/mixins.scss";
 
 .card {
-  width: 33%;
+  width: 27%;
   border: 1px solid $secondaryColor;
   border-radius: 5px;
   padding: 14px;
-  // display: flex;
+  margin: 14px; // display: flex;
   // justify-content: space-around;
   // align-items: center;
   @include flexbox(flex, space-around, center);
