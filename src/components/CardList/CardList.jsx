@@ -13,7 +13,7 @@ const CardList = ({ list }) => {
   console.log(("Details context ...", context));
 
   const goToDetails = (id) => {
-    console.log("click ... goToDetails", `/${redirectDetailsRoute}/${id}`);
+    console.log("click ... goToDetails", `${redirectDetailsRoute}/${id}`);
     navigate(`${redirectDetailsRoute}/${id}`);
   };
 
