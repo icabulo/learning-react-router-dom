@@ -11,7 +11,7 @@ function RickAndMorty() {
   const context = useContext(Context);
   console.log("*****", context);
 
-  const [loader, setLoader] = useState(true);
+  // const [loader, setLoader] = useState(true);
 
   const getAllCharacters = () => {
     const url = "https://rickandmortyapi.com/api/character";
