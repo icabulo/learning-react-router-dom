@@ -6,41 +6,25 @@ import { Footer } from "../components/Footer";
 import { CardList } from "../components/CardList";
 import { Context } from "../context";
 import { getAllCharacters } from "../services/rickAndMortyAPI";
+import { useCharacters, useData } from "../hooks";
 
 function RickAndMorty() {
-  const [characters, setCharacters] = useState([]);
+  // const { characters } = useCharacters("ram");
+  const { data: characters } = useData([], getAllCharacters);
   const context = useContext(Context);
 
-  const getData = async () => {
-    const data = await getAllCharacters();
-    context.rickAndMorty.characters = data;
-    context.redirectDetailsRoute = "/rickandmorty";
-    setCharacters(data);
-  };
-  // const [loader, setLoader] = useState(true);
+  console.log("characters", characters);
 
+  //Rendered
   useEffect(() => {
-    getData();
+    //getData();
+    context.rickAndMorty.characters = characters;
+    context.redirectDetailsRoute = "/rickandmorty";
   }, []);
-
-  /* const mappedCharacters = characters.map((character) => (
-    <div key={character.id}>
-      {character.name}
-      <img src={character.image} alt={character.name} />
-    </div>
-  )); */
-
-  /* const mappedCharacters = characters.map((character) => (
-    <div key={character.id}>
-      <Card name={character.name} image={character.image} />
-    </div>
-  )); */
 
   return (
     <>
       <Header>Header</Header>
-
-      {/* <div>{characters.length >= 1 && mappedCharacters}</div> */}
       <CardList list={characters} />
       <Footer>Footer</Footer>
     </>
