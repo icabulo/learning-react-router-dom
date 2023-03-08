@@ -22,6 +22,7 @@ function RAMDeatails() {
     } else {
       getData(idParam);
     }
+    //tambien se puede parsear con +idParam, e + lo convierte a numero
     setCharacter(item); //si se usa .filter, se debe utilizar item[0] para acceder al objeto que esta en la primera posicion del vector.
     // console.log("character", character);
   }, []);
