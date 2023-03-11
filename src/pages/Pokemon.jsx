@@ -15,13 +15,11 @@ function Pokemon() {
 
   // const [loader, setLoader] = useState(true);
 
-  //IMPORTANTE: PREGUNTARLE A MARIA PORQUE EL CONTEXTO NO SE ESTA ACTUALIZANDO
   useEffect(() => {
     context.pokemon.characters = characters;
     context.redirectDetailsRoute = "/pokemon";
   }, [characters]);
 
-  //IMPORTANTE: PREGUNTARLE A MARIA PORQUE EL CONTEXTO NO SE ESTA ACTUALIZANDO
   console.log("contexto actualizado en Pagina Pokemon", context.pokemon);
 
   return (
