@@ -13,14 +13,26 @@ function RickAndMorty() {
   const { data: characters } = useData([], getAllCharacters);
   const context = useContext(Context);
 
-  console.log("characters", characters);
+  // console.log("characters", characters);
 
   //Rendered
   useEffect(() => {
     //getData();
     context.rickAndMorty.characters = characters;
     context.redirectDetailsRoute = "/rickandmorty";
-  }, []);
+  }, [characters]);
+
+  console.log(
+    "contexto actualizado en Pagina rickandmorty",
+    context.rickAndMorty
+  );
+
+  useEffect(() => {
+    console.log(
+      "contexto actualizado en Pagina rickandmorty",
+      context.rickAndMorty
+    );
+  }, [context]);
 
   return (
     <>
