@@ -10,10 +10,10 @@ const CardList = ({ list }) => {
   const context = useContext(Context);
   const { redirectDetailsRoute } = context; //destructuring para sacar la propiedad del objeto context
 
-  console.log(("Details context ...", context));
+  // console.log(("Details context ...", context));
 
   const goToDetails = (id) => {
-    console.log("click ... goToDetails", `/${redirectDetailsRoute}/${id}`);
+    // console.log("click ... goToDetails", `${redirectDetailsRoute}/${id}`);
     navigate(`${redirectDetailsRoute}/${id}`);
   };
 
