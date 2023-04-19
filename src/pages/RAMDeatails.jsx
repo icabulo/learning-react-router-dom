@@ -15,13 +15,14 @@ function RAMDeatails() {
   const { id, species, name, status, image, gender } = character || {}; //hacer destructuring para enviar solamente los datos
 
   useEffect(() => {
-    console.log("useEfect", id, species);
+    console.log("useEfect", characters);
     const item = characters.find((item) => item.id === parseInt(idParam)); //si usa .filter, devuelve un vector con un elemento tipo objeto
     if (item) {
       setCharacter(item);
     } else {
       getData(idParam);
     }
+    //tambien se puede parsear con +idParam, e + lo convierte a numero
     setCharacter(item); //si se usa .filter, se debe utilizar item[0] para acceder al objeto que esta en la primera posicion del vector.
     // console.log("character", character);
   }, []);
